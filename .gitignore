@@ -1,0 +1,79 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+nbnbbn/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Datasets and local feature files
+data/
+datasets/
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# Model checkpoints and generated evaluation records
+ckpt/
+ckpt_results*/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Logs and experiment trackers (keep only the directory placeholder)
+log/*
+!log/placeholder.txt
+logs/
+wandb/
+runs/
+
+# Generated analysis outputs
+/case_study.png
+/confusion_matrix.png
+/tsne*.png
+/modality_weights_*.csv
+/figure/
+
+# The bundled image is the upstream P-RMF framework, not the QDRF figure
+/imgs/Framework.png
+
+# Local archives and paper copies
+*.zip
+*.pdf
+
+# Personal scratch files from local experiments
+/asd.py
+/figure1.py
+/command
+/result
+
+# Optional or legacy code excluded from the initial public release
+/core/optimizer.py
+/run_mosi.py
+/run_sims.py
+/train.sh
+/evaluation.sh
+/case_study.py
+/confusion_matrix_mosi.py
+/tsne_all_modalities.py

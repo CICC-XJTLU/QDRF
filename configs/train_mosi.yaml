@@ -1,0 +1,71 @@
+base:
+  seed: 1111
+  lr: 0.0001
+  weight_decay: 0.0001
+  batch_size: 32
+  n_epochs: 50
+  num_workers: 0
+  gamma: 0.1
+  sigma: 1.0
+  kl: 0.5
+  beta_mask: 0.0
+  alpha_distill: 0.9
+  level: 3
+  train_mode: regression
+  missing_rate_eval_test: 0.5
+  do_validation: true
+dataset:
+  datasetName: mosi
+  dataPath: data/CMU-MOSI/Processed/unaligned_50.pkl
+model:
+  feature_extractor:
+    bert_pretrained: bert-base-uncased
+    transformers: bert
+    input_length:
+    - 50
+    - 500
+    - 375
+    token_length:
+    - 8
+    - 8
+    - 8
+    heads: 8
+    input_dims:
+    - 768
+    - 20
+    - 5
+    hidden_dims:
+    - 128
+    - 128
+    - 128
+    depth: 2
+  vae:
+    input_length: 8
+    depth: 2
+    heads: 8
+    input_dim: 128
+    hidden_dim: 128
+  reconstructor:
+    input_length: 8
+    depth: 2
+    heads: 8
+    input_dim: 128
+    hidden_dim: 128
+  crossmodal_encoder:
+    proxy_dim: 128
+    hidden_dims:
+    - 128
+    - 128
+    - 128
+    embed_dim: 128
+    num_layers: 3
+    attn_dropout: 0.5
+  generate_proxy:
+    input_dim: 128
+    hidden_dim: 128
+    out_dim: 128
+  regression:
+    attn_dropout: 0.5
+    input_dim: 128
+    hidden_dim: 128
+    out_dim: 1

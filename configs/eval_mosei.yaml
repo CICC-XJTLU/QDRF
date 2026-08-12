@@ -1,0 +1,63 @@
+base:
+  seed: 1111
+  batch_size: 64
+  num_workers: 0
+  kl: 0.5
+  num_layers: 4
+  attn_dropout: 0.5
+  train_mode: regression
+  key_eval: Non0_acc_2
+  type: test #
+  level: 7
+  missing_rate_eval_test: 0
+#  missing_rate_eval_test:
+#    l: 1
+#    v: 0
+#    a: 1
+dataset:
+  datasetName: mosei
+  dataPath: data/CMU-MOSEI/Processed/unaligned_50.pkl
+   
+
+model:    
+  feature_extractor:
+    bert_pretrained: 'bert-base-uncased'
+    transformers: 'bert'
+    input_length: [50, 500, 500] # language, video, audio
+    token_length: [8, 8, 8] # language, video, audio
+    heads: 8
+    input_dims: [768, 35, 74] # language, video, audio
+    hidden_dims: [128, 128, 128] # language, video, audio
+    depth: 2
+
+  vae:
+    input_length: 8
+    depth: 2
+    heads: 8
+    input_dim: 128
+    hidden_dim: 128
+
+  reconstructor:
+    input_length: 8
+    depth: 2
+    heads: 8
+    input_dim: 128
+    hidden_dim: 128
+
+  crossmodal_encoder:
+    proxy_dim: 128
+    hidden_dims: [128, 128, 128] # language, video, audio
+    embed_dim: 128
+    num_layers: 3
+    attn_dropout: 0.5
+
+  generate_proxy:
+    input_dim: 128
+    hidden_dim: 128
+    out_dim: 128
+
+  regression:
+    attn_dropout: 0.5
+    input_dim: 128
+    hidden_dim: 128
+    out_dim: 1

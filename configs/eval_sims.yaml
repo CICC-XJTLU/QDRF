@@ -1,0 +1,72 @@
+base:
+  alpha_distill: 0.4
+  attn_dropout: 0.5
+  batch_size: 32
+  key_eval: Mult_acc_2
+  kl: 0.5
+  level: 3
+  missing_rate_eval_test: 0
+#  missing_rate_eval_test:
+#    l: 1
+#    v: 1
+#    a: 0
+  num_layers: 4
+  num_workers: 0
+  seed: 1111
+  train_mode: regression
+  type: test
+dataset:
+  dataPath: data/CH-SIMS/Processed/unaligned_39.pkl
+  datasetName: sims
+model:
+  crossmodal_encoder:
+    attn_dropout: 0.5
+    embed_dim: 128
+    hidden_dims:
+    - 128
+    - 128
+    - 128
+    num_layers: 3
+    proxy_dim: 128
+  feature_extractor:
+    bert_pretrained: bert-base-chinese
+    depth: 2
+    heads: 8
+    hidden_dims:
+    - 128
+    - 128
+    - 128
+    input_dims:
+    - 768
+    - 709
+    - 33
+    input_length:
+    - 39
+    - 55
+    - 400
+    token_length:
+    - 39
+    - 39
+    - 39
+    transformers: bert
+  generate_proxy:
+    hidden_dim: 128
+    input_dim: 128
+    out_dim: 128
+  reconstructor:
+    depth: 2
+    heads: 8
+    hidden_dim: 128
+    input_dim: 128
+    input_length: 8
+  regression:
+    attn_dropout: 0.5
+    hidden_dim: 128
+    input_dim: 128
+    out_dim: 1
+  vae:
+    depth: 2
+    heads: 8
+    hidden_dim: 128
+    input_dim: 128
+    input_length: 8
