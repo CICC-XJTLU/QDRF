@@ -4,7 +4,7 @@ This repository provides the PyTorch implementation of **QDRF**, introduced in o
 
 [[Paper](https://doi.org/10.1016/j.ins.2026.123966)]
 
-QDRF addresses multimodal sentiment analysis when one or more modalities are incomplete. Instead of relying only on continuous feature reconstruction, it learns a discrete semantic pivot with finite scalar quantization (FSQ), refines modality representations using that pivot, and transfers complete-data knowledge to the incomplete-data model through an asymmetric teacher-student framework.
+QDRF addresses multimodal sentiment analysis when one or more modalities are incomplete. 
 
 ## Main components
 
