@@ -3,7 +3,7 @@
 This repository provides the PyTorch implementation of **QDRF**, introduced in our paper published in *Information Sciences*, 758 (2027), Article 123966.
 
 [[Paper](https://doi.org/10.1016/j.ins.2026.123966)]
-
+![QDRF framework](imgs/qdrf_framework.png)
 QDRF addresses multimodal sentiment analysis when one or more modalities are incomplete. 
 
 ## Main components
@@ -144,4 +144,4 @@ This codebase is adapted from [P-RMF](https://github.com/aoqzhu/P-RMF), the impl
 
 ## License
 
-This repository is distributed under the [MIT License](LICENSE). It contains code derived from P-RMF, so the upstream copyright and license notice are retained. Datasets, pretrained language models, and separately distributed checkpoints remain subject to the licenses of their respective providers.
+This repository is distributed under the [MIT License](LICENSE). 
