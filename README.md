@@ -2,9 +2,9 @@
 
 This repository provides the PyTorch implementation of **QDRF**, introduced in our paper published in *Information Sciences*, 758 (2027), Article 123966.
 
-[[Paper](https://doi.org/10.1016/j.ins.2026.123966)]
+[Paper](https://doi.org/10.1016/j.ins.2026.123966)
 
-![QDRF framework](imgs/Overall Architecture.png)
+![QDRF framework](imgs/Overall%20Architecture.png)
 
 QDRF addresses multimodal sentiment analysis when one or more modalities are incomplete. 
 
